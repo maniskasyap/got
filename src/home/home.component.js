@@ -9,7 +9,7 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		fetch("https://api.got.show/api/houses/")
+		fetch("https://www.anapioficeandfire.com/api/houses?pageSize=50")
 			.then(res => res.json())
 			.then(data => {
 				this.setState({ houses: data });
