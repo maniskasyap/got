@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link, Route } from "react-router-dom";
+import HouseDetails from "../house-details/house-details.component";
 
 class Home extends Component {
 	constructor(props) {
@@ -19,7 +21,7 @@ class Home extends Component {
 	render() {
 		const housesList = this.state.houses.map(house => (
 			<li key={house._id}>
-				<a href="#details">{house.name}</a>
+				<Link to="/details">{house.name}</Link>
 			</li>
 		));
 		return (
@@ -27,6 +29,7 @@ class Home extends Component {
 				<p>all the houses</p>
 				<ul>{housesList}</ul>
 				<div id="details" />
+				<Route path="/details" component={HouseDetails} />
 			</div>
 		);
 	}
